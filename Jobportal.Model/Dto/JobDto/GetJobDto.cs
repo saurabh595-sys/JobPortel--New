@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Jobportal.Model.Dto.JobDto
+﻿namespace Jobportal.Model.Dto.JobDto
 {
-   public class GetJobDto
+    public class GetJobDto
     {
         
         public int Id { get; set; }

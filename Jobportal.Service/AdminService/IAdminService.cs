@@ -2,10 +2,7 @@
 using Jobportal.Model.Dto.RecruiterDto;
 using Jobportal.Model.Dto.UserDto;
 using Jobportal.Model.Model;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Jobportal.Service.AdminService

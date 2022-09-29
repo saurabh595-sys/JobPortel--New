@@ -4,8 +4,6 @@ using Jobportal.Service.OtpService;
 using JobPortal.Repository.AccountRepository;
 using JobPortal.Repository.UserRepository;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 

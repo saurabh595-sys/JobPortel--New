@@ -3,13 +3,10 @@ using Jobportal.Model.Dto.JobDto;
 using Jobportal.Model.Model;
 using Jobportal.Service.EmailService;
 using JobPortal.Repository.CandidateRepository;
-using JobPortal.Repository.Contexts;
 using JobPortal.Repository.JobRepository;
 using JobPortal.Repository.UserRepository;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -57,6 +54,7 @@ namespace Jobportal.Service.JobService
                     }
                 }
 
+               
                 return await _candidateRepository.AddAsync(applyjobs);
 
             }

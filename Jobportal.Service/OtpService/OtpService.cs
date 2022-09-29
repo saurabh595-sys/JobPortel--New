@@ -1,9 +1,6 @@
 ﻿using Jobportal.Model.Model;
 using JobPortal.Repository.OtpRepository;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Jobportal.Service.OtpService

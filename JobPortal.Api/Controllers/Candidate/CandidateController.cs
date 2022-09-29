@@ -1,15 +1,14 @@
 ﻿using Jobportal.Model.Dto.JobDto;
 using Jobportal.Model.Model;
 using Jobportal.Service.JobService;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace JobPortal.Api.Controllers.Candidate
 {
+
+    [Authorize(Policy = "AdminCandidateOnly")]
     [Route("api/[controller]")]
     [ApiController]
     public class CandidateController : BaseController

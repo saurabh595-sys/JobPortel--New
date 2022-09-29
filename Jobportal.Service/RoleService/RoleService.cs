@@ -1,9 +1,5 @@
 ﻿using Jobportal.Model.Model;
 using JobPortal.Repository.RoleRepository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Jobportal.Service.RoleService

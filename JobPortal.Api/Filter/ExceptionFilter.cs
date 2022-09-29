@@ -1,12 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace JobPortal.Api.Filter
 {
@@ -17,8 +14,6 @@ namespace JobPortal.Api.Filter
             HttpStatusCode httpStatus = HttpStatusCode.InternalServerError;
             string errormessage = string.Empty;
             var exceptionType = context.Exception.GetType();
-
-           
 
             if (exceptionType == typeof(UnauthorizedAccessException))
             {
@@ -38,7 +33,7 @@ namespace JobPortal.Api.Filter
             var response = new HttpResponseMessage(httpStatus)
             {
                 Content = new StringContent(errormessage),
-                ReasonPhrase = "From Exception Filter",
+                
             };
             context.HttpContext.Response.WriteAsync(JsonSerializer.Serialize(response));
         }

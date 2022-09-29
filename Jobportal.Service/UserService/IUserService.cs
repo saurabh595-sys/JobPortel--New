@@ -1,14 +1,11 @@
 ﻿using Jobportal.Model.Dto.UserDto;
 using Jobportal.Model.Model;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Jobportal.Service.UserService
 {
-   public interface IUserService
+    public interface IUserService
     {
         Task<IEnumerable<GetUserDto>> GetUsersAsync(Pagination pagination);
         Task<User> GetUserByIdAsync(int id);

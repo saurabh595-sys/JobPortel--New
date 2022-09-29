@@ -1,15 +1,12 @@
 ﻿using Jobportal.Model.Model;
 using Jobportal.Model.Dto.JobDto;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Jobportal.Model.Dto.CandidateDto;
 
 namespace Jobportal.Service.JobService
 {
-   public interface IJobService
+    public interface IJobService
     {
         Task<IEnumerable<GetJobDto>> GetJobsAsync(Pagination pagination);
 

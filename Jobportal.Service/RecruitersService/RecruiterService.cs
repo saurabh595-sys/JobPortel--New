@@ -1,19 +1,15 @@
 ﻿using Jobportal.Model.Dto.JobDto;
 using Jobportal.Model.Dto.RecruiterDto;
 using Jobportal.Model.Model;
-using JobPortal.Repository.Contexts;
 using JobPortal.Repository.JobRepository;
 using JobPortal.Repository.RecruiterRepository;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Jobportal.Service.RecruitersService
 {
-  public  class RecruiterService : IRecruiterService
+    public  class RecruiterService : IRecruiterService
     {
       
         private readonly IJobRepository _jobRepository;

@@ -3,10 +3,8 @@ using Jobportal.Model.Model;
 using JobPortal.Repository.Contexts;
 using JobPortal.Repository.Inrastructure;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace JobPortal.Repository.UserRepository
@@ -28,18 +26,12 @@ namespace JobPortal.Repository.UserRepository
                                    Email = u.Email,
                                    IsActive = u.IsActive,
 
-                               }).OrderBy(x => x.Id)
-                                .ToListAsync();
-            //var count = users.Count();
-            //if (pagination.PageSize == -1)
-            //{
-            //    pagination.PageSize = count;
-            //}
-
-            var result = users.Skip((pagination.PageNumber - 1) * pagination.PageSize)
-                             .Take(pagination.PageSize == -1 ? 10000 : pagination.PageSize);
-
-            return result;
+                               })
+                                .Skip((pagination.PageNumber - 1) * pagination.PageSize)
+                                 .Take(pagination.PageSize)
+                                 .OrderBy(x => x.Id)
+                                 .ToListAsync();
+            return users;
 
 
 

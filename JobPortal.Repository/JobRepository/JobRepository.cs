@@ -4,15 +4,13 @@ using Jobportal.Model.Model;
 using JobPortal.Repository.Contexts;
 using JobPortal.Repository.Inrastructure;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace JobPortal.Repository.JobRepository
 {
-   public class JobRepository :Repository<JobMaster> ,IJobRepository
+    public class JobRepository :Repository<JobMaster> ,IJobRepository
     {
         public JobRepository(Context context):base(context)
         {
@@ -31,17 +29,11 @@ namespace JobPortal.Repository.JobRepository
                                         JobTitle = j.Title,
                                         JobDescription = j.Description,
                                         AppliedAt = a.AppliedAt
-                                    }).OrderBy(x => x.Id)
-                                   .ToListAsync();
-            var count = JobApplied.Count();
-            if (pagination.PageSize == -1)
-            {
-                pagination.PageSize = count;
-            }
-
-            var result = JobApplied.Skip((pagination.PageNumber - 1) * pagination.PageSize)
-                           .Take(pagination.PageSize);
-            return result;
+                                    }).Skip((pagination.PageNumber - 1) * pagination.PageSize)
+                                 .Take(pagination.PageSize)
+                                 .OrderBy(x => x.Id)
+                                 .ToListAsync();
+            return JobApplied;
 
         }
 
@@ -54,17 +46,12 @@ namespace JobPortal.Repository.JobRepository
                                   Id = j.Id,
                                   Title = j.Title,
                                   Description = j.Description
-                              }).OrderBy(x => x.Id)
-                               .ToListAsync();
-            var count = Jobs.Count();
-            if (pagination.PageSize == -1)
-            {
-                pagination.PageSize = count;
-            }
+                              }).Skip((pagination.PageNumber - 1) * pagination.PageSize)
+                                 .Take(pagination.PageSize)
+                                 .OrderBy(x => x.Id)
+                                 .ToListAsync();
 
-            var result = Jobs.Skip((pagination.PageNumber - 1) * pagination.PageSize)
-                           .Take(pagination.PageSize);
-            return result;
+            return Jobs;
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace JobPortal.Api.Controllers.User
 {
+    [Authorize(Policy = "AdminCandidateOnly")]
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : BaseController
@@ -56,7 +57,7 @@ namespace JobPortal.Api.Controllers.User
             }
             else
             {
-                return BadResponse("Failed To Update", user);
+                return BadResponse("Failed To Update", "");
             }
         }
     }
